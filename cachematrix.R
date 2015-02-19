@@ -1,11 +1,12 @@
-## makeCacheMatrix and cachesolve work together to find and cache inverse of a matrix
+## makeCacheMatrix and cachesolve work together to find and cache the inverse of a matrix
+##
 ## they are used like this
 ## cache <- makeCacheMatrix(matrix)
 ## inverse <- cacheSolve(cache)
 
-## makeCacheMatrix creates a list containing functions to
+## makeCacheMatrix creates a list containing functions to cache a matrix and its inverse
 ## parameters:
-## x = The matrix to find the inverse of
+## x = The matrix to be cached
 ##
 ## returns a list of four functions
 ## set = set the value of the matrix
@@ -29,12 +30,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## cacheSolve finds the inverse of a matrix stored in a cache
-## or returnd the cached inverse if the problem has already been solved
+## or returns the cached inverse if the problem has already been solved
 ##
 ## parameters:
 ## x = a list containing four functions: get, set, getinverse
 ## and setinverse (the result of calling makeCacheMatrix)
 ## ... = parameters passed to the solve function
+##
 ## returns the inverse of the matrix
 ##
 ## When using the cached data prints a message.
